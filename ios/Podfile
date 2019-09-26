@@ -34,20 +34,5 @@ target 'animation' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  target 'animationTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
   use_native_modules!
-end
-
-target 'animation-tvOS' do
-  # Pods for animation-tvOS
-
-  target 'animation-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end
