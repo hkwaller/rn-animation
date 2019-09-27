@@ -17,11 +17,13 @@ export const Label = styled.Text`
 export const Score = styled.Text`
   font-size: 28
   color: white
+  font-weight: 900
 `
 
 export const CardHeader = styled.Text`
   font-size: 20
-  color: #343CF9
+  color: #2E3DAC
+  font-weight: 900
 `
 
 export const CardTag = styled.Text`
@@ -29,4 +31,5 @@ export const CardTag = styled.Text`
   text-transform: uppercase
   border-bottom-width: 2
   border-color: black
+  font-weight: 900
 `
