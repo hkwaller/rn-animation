@@ -17,16 +17,7 @@ import LayoutAnimationScreen from 'app/tabs/layout-animation/LayoutAnimationScre
 import PoseScreen from 'app/tabs/pose/PoseScreen'
 import AnimatableScreen from 'app/tabs/animatable/AnimatableScreen'
 import PoseDetailsScreen from 'app/tabs/pose/PoseDetailsScreen'
-
-class SettingsScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Settings!</Text>
-      </View>
-    )
-  }
-}
+import AnimatedScreen from 'app/tabs/animated/AnimatedScreen'
 
 const PoseNavigator = createStackNavigator(
   {
@@ -45,7 +36,7 @@ const TabNavigator = createBottomTabNavigator(
     Pose: PoseNavigator,
     LayoutAnimation: LayoutAnimationScreen,
     Animatable: AnimatableScreen,
-    Settings: SettingsScreen
+    Animated: AnimatedScreen
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
@@ -54,7 +45,7 @@ const TabNavigator = createBottomTabNavigator(
         let iconName
         if (routeName === 'Animatable') {
           iconName = `eraser`
-        } else if (routeName === 'Settings') {
+        } else if (routeName === 'Animated') {
           iconName = `wheelchair-alt`
         } else if (routeName === 'Pose') {
           iconName = `smile-o`
@@ -72,7 +63,7 @@ const TabNavigator = createBottomTabNavigator(
         if (routeName === 'Animatable') label = 'Animatable'
         else if (routeName === 'LayoutAnimation') label = 'LA'
         else if (routeName === 'Pose') label = 'Pose'
-        else if (routeName === 'Settings') label = 'Settings'
+        else if (routeName === 'Animated') label = 'Animated'
 
         return <Text style={{ fontSize: 16, fontWeight: '800', color: tintColor }}>{label}</Text>
       }

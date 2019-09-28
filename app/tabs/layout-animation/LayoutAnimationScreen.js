@@ -30,13 +30,15 @@ function LayoutAnimationScreen() {
     if (circles.length === 0) return setCircles([{ index: 0, text: '0', size: DEFAULT_SIZE }])
 
     const newIndex = Math.max.apply(Math, circles.map(c => c.index)) + 1
-    return setCircles([...circles, { index: newIndex, text: newIndex, size: DEFAULT_SIZE }])
+    setCircles([...circles, { index: newIndex, text: newIndex, size: DEFAULT_SIZE }])
   }
 
   function update(index) {
     LayoutAnimation.configureNext(CustomLayoutAnimation)
 
-    circles[index].size = circles[index].size === DEFAULT_SIZE ? 150 : 80
+    circles.forEach(c => {
+      if (c.index === index) c.size = c.size === DEFAULT_SIZE ? 150 : 80
+    })
 
     setCircles([...circles])
   }
