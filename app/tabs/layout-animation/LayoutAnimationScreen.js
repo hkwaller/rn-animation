@@ -11,8 +11,10 @@ import {
 import Circle from './Circle'
 import { CustomLayoutAnimation } from './config'
 
+const DEFAULT_SIZE = 80
+
 function LayoutAnimationScreen() {
-  const initialCircles = [{ index: 0, text: 'hhvh' }]
+  const initialCircles = [{ index: 0, text: '0', size: DEFAULT_SIZE }]
 
   const [circles, setCircles] = useState(initialCircles)
 
@@ -25,14 +27,18 @@ function LayoutAnimationScreen() {
   function add() {
     LayoutAnimation.configureNext(CustomLayoutAnimation)
 
-    if (circles.length === 0) return setCircles([{ index: 0, text: 'no' }])
+    if (circles.length === 0) return setCircles([{ index: 0, text: '0', size: DEFAULT_SIZE }])
 
     const newIndex = Math.max.apply(Math, circles.map(c => c.index)) + 1
-    return setCircles([...circles, { index: newIndex, text: newIndex }])
+    return setCircles([...circles, { index: newIndex, text: newIndex, size: DEFAULT_SIZE }])
   }
 
   function update(index) {
     LayoutAnimation.configureNext(CustomLayoutAnimation)
+
+    circles[index].size = circles[index].size === DEFAULT_SIZE ? 150 : 80
+
+    setCircles([...circles])
   }
 
   return (
@@ -45,6 +51,7 @@ function LayoutAnimationScreen() {
           <Circle
             key={c.index}
             text={c.text}
+            size={c.size}
             onPress={() => remove(c.index)}
             onLongPress={() => update(c.index)}
           />

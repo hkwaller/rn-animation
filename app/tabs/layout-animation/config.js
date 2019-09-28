@@ -7,7 +7,8 @@ export const CustomLayoutAnimation = {
     property: LayoutAnimation.Properties.scaleX
   },
   update: {
-    type: LayoutAnimation.Types.curveEaseInEaseOut
+    type: LayoutAnimation.Types.curveEaseInEaseOut,
+    property: LayoutAnimation.Properties.scaleXY
   },
   delete: {
     type: LayoutAnimation.Types.linear,

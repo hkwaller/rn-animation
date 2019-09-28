@@ -15,6 +15,7 @@ import { Header, Score, Label, CardHeader, CardTag } from 'app/components/texts'
 import Screen from 'app/components/Screen'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import styles from './PoseScreen.styles'
+import Card from 'app/components/Card'
 
 const cards = [
   { header: 'Quick Play', tag: 'new', icon: 'angellist', color: 'darkorange' },
@@ -22,22 +23,6 @@ const cards = [
   { header: 'Quick Play', tag: 'january', icon: 'bath', color: 'chocolate' },
   { header: 'Events', tag: 'new', icon: 'deafness', color: 'mediumblue' }
 ]
-function Card(props) {
-  const { tag, header, icon, color, navigation } = props
-  return (
-    <TouchableOpacity
-      activeOpacity={0.8}
-      style={styles.card}
-      onPress={() => {
-        navigation.push('PostDetails', { ...props })
-      }}>
-      <CardTag>{tag}</CardTag>
-      <View style={styles.tagLine(color)} />
-      <CardHeader style={{ marginTop: 10 }}>{header}</CardHeader>
-      <Icon name={icon} size={70} color={color} style={styles.cardIcon} />
-    </TouchableOpacity>
-  )
-}
 
 function PoseScreen({ navigation }) {
   return (

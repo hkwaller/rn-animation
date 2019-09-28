@@ -4,15 +4,16 @@ import { CustomLayoutAnimation } from './config'
 
 function Circle(props) {
   LayoutAnimation.configureNext(CustomLayoutAnimation)
+  console.log('props: ', props)
 
   return (
     <TouchableOpacity
       onPress={props.onPress}
       onLongPress={props.onLongPress}
       style={{
-        width: 80,
-        height: 80,
-        borderRadius: 80 / 2.0,
+        width: props.size,
+        height: props.size,
+        borderRadius: props.size / 2.0,
         borderWidth: 5,
         borderColor: 'black',
         backgroundColor: 'white',

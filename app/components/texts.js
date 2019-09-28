@@ -33,3 +33,9 @@ export const CardTag = styled.Text`
   border-color: black
   font-weight: 900
 `
+
+export const DetailsHeader = styled.Text`
+  font-size: 40
+  font-weight: 900
+  color: white
+`
