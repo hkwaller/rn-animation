@@ -10,16 +10,17 @@ function Circle(props) {
       onPress={props.onPress}
       onLongPress={props.onLongPress}
       style={{
-        width: 50,
-        height: 50,
-        borderRadius: 50 / 2.0,
-        borderWidth: 2,
-        borderColor: 'gray',
+        width: 80,
+        height: 80,
+        borderRadius: 80 / 2.0,
+        borderWidth: 5,
+        borderColor: 'black',
+        backgroundColor: 'white',
         margin: 20,
         justifyContent: 'center',
         alignItems: 'center'
       }}>
-      <Text>{props.text}</Text>
+      <Text style={{ fontSize: 20 }}>{props.text}</Text>
     </TouchableOpacity>
   )
 }

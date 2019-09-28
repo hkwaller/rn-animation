@@ -1,4 +1,4 @@
-import React, { Component, useState, useCallback } from 'react'
+import React, { Component, useState } from 'react'
 import {
   AppRegistry,
   StyleSheet,
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 40,
     padding: 100,
-    backgroundColor: '#F5FCFF'
+    backgroundColor: 'mediumvioletred'
   },
   button: {
     borderColor: 'lightgreen',
