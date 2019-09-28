@@ -4,7 +4,6 @@ import { CustomLayoutAnimation } from './config'
 
 function Circle(props) {
   LayoutAnimation.configureNext(CustomLayoutAnimation)
-  console.log('props: ', props)
 
   return (
     <TouchableOpacity
