@@ -65,20 +65,16 @@ const TabNavigator = createBottomTabNavigator(
         else if (routeName === 'Pose') label = 'Pose'
         else if (routeName === 'Animated') label = 'Animated'
 
-        return <Text style={{ fontSize: 16, fontWeight: '800', color: tintColor }}>{label}</Text>
+        return <Text style={{ fontSize: 14, fontWeight: '800', color: tintColor }}>{label}</Text>
       }
     }),
     tabBarOptions: {
+      activeTintColor: 'tomato',
+      inactiveTintColor: 'black',
       style: {
-        backgroundColor: 'transparent',
-        position: 'absolute',
-        left: 0,
-        bottom: 0,
-        right: 0,
-        borderTopColor: 'transparent'
-      },
-      activeTintColor: 'white',
-      inactiveTintColor: 'black'
+        paddingTop: 8,
+        borderTopWidth: 1
+      }
     }
   }
 )

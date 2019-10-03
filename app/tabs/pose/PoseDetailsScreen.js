@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { Text, View, ImageBackground, TouchableOpacity } from 'react-native'
+import { Text, View, ImageBackground, TouchableOpacity, Button, ScrollView } from 'react-native'
 import posed from 'react-native-pose'
-
 import Screen from 'app/components/Screen'
 import { DetailsHeader } from 'app/components/texts'
 import background from 'app/assets/background.png'
 import Card from 'app/components/Card'
+import BackButton from 'app/components/BackButton'
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 const Box = posed.View({
   visible: {
@@ -25,7 +26,7 @@ const Overlay = posed.View({
     delayChildren: 200,
     staggerChildren: 100
   },
-  closed: { y: '100vh', delay: 300 }
+  closed: { y: 100, delay: 300 }
 })
 
 const Item = posed.View({
@@ -40,17 +41,20 @@ const PoseDetailsScreen = props => {
   return (
     <Screen color={color}>
       <View style={{ padding: 20 }}>
-        <DetailsHeader>{header}</DetailsHeader>
-        <View style={{ backgroundColor: 'white', padding: 40, borderRadius: 10, marginTop: 20 }}>
-          <Text>sup</Text>
+        <BackButton navigation={props.navigation} />
+        <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollView}>
+          <DetailsHeader style={{ marginBottom: 50 }}>{header}</DetailsHeader>
+          <View style={styles.roundButton}>
+            <Icon name="paper-plane-o" size={30} color="white" />
+          </View>
           <TouchableOpacity onPress={() => setVisible(!isVisible)}>
             <Text>toggle</Text>
           </TouchableOpacity>
-          <Box
-            style={{ padding: 50, backgroundColor: 'red' }}
-            pose={isVisible ? 'visible' : 'hidden'}
-          />
-          <Overlay pose={isVisible ? 'open' : 'closed'}>
+          <Box style={styles.box} pose={isVisible ? 'visible' : 'hidden'} />
+          <Overlay
+            style={{ flexDirection: 'row', flexWrap: 'wrap' }}
+            pose={isVisible ? 'open' : 'closed'}
+            style={{ marginBottom: 100 }}>
             <Item>
               <Card {...props.navigation.state.params} />
             </Item>
@@ -58,10 +62,29 @@ const PoseDetailsScreen = props => {
               <Card {...props.navigation.state.params} />
             </Item>
           </Overlay>
-        </View>
+        </ScrollView>
       </View>
     </Screen>
   )
+}
+
+const styles = {
+  scrollView: {
+    backgroundColor: 'white',
+    alignItems: 'center',
+    borderRadius: 10,
+    marginTop: 20,
+    paddingTop: 40
+  },
+  roundButton: {
+    width: 100,
+    height: 100,
+    backgroundColor: 'grey',
+    borderRadius: 50,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  box: { padding: 50, backgroundColor: 'red' }
 }
 
 export default PoseDetailsScreen

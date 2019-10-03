@@ -13,9 +13,7 @@ function Circle(props) {
         width: props.size,
         height: props.size,
         borderRadius: props.size / 2.0,
-        borderWidth: 5,
-        borderColor: 'black',
-        backgroundColor: 'white',
+        backgroundColor: props.color,
         margin: 20,
         justifyContent: 'center',
         alignItems: 'center'

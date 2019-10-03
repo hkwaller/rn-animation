@@ -4,7 +4,7 @@ export const CustomLayoutAnimation = {
   duration: 200,
   create: {
     type: LayoutAnimation.Types.linear,
-    property: LayoutAnimation.Properties.scaleX
+    property: LayoutAnimation.Properties.scaleY
   },
   update: {
     type: LayoutAnimation.Types.curveEaseInEaseOut,
@@ -12,6 +12,6 @@ export const CustomLayoutAnimation = {
   },
   delete: {
     type: LayoutAnimation.Types.linear,
-    property: LayoutAnimation.Properties.scaleXY
+    property: LayoutAnimation.Properties.scaleY
   }
 }

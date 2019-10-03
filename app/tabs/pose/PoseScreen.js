@@ -13,7 +13,6 @@ import {
 import background from 'app/assets/background.png'
 import { Header, Score, Label, CardHeader, CardTag } from 'app/components/texts'
 import Screen from 'app/components/Screen'
-import Icon from 'react-native-vector-icons/FontAwesome'
 import styles from './PoseScreen.styles'
 import Card from 'app/components/Card'
 
